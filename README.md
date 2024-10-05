@@ -1,5 +1,13 @@
-# Vue 3 + TypeScript + Vite
+# TODO
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+- Fix `@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap');` problem in App.vue logo
+- Put some text in `App.vue`
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+
+# Ideas
+
+https://gregoire-becue.me/#scholar-timeline
+https://anuraghazra.dev/
+https://bipinmv.netlify.app/
+https://akashblsbrmnm.github.io/
+https://abdulrahman.id/
