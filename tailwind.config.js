@@ -1,4 +1,5 @@
 const animate = require("tailwindcss-animate")
+const plugin = require('tailwindcss/plugin')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -22,6 +23,11 @@ module.exports = {
       },
     },
     extend: {
+      textShadow: {
+        sm: '0 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+        lg: '0 8px 16px var(--tw-shadow-color)',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -56,6 +62,7 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        'bluewood' : '#354660',
       },
       borderRadius: {
       	xl: "calc(var(--radius) + 4px)",
@@ -88,9 +95,22 @@ module.exports = {
         "collapsible-up": "collapsible-up 0.2s ease-in-out",
       },
       fontFamily:{
-        cool: ['Jacquard']
+        Afacade: ["Afacade", "sans-serif"]
       }
     },
   },
-  plugins: [animate],
+  plugins: [
+    animate,
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    }),
+  ],
+
 }

@@ -1,10 +1,10 @@
 <template>
-  <nav class="bg-gray-800 shadow-md rounded-b-sm">
+  <nav class="bg-gray-800 shadow-md rounded-b-sm overflow-hidden">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         <!-- Logo -->
         <div class="absolute inset-y-0 flex items-center">
-          <a href="#" class="font-cool flex-shrink-0 text-xl font-bold text-gray-100">
+          <a href="#" class="foont-col flex-shrink-1 text-4xl font-bold text-gray-100">
             Luhyxi
           </a>
         </div>
@@ -22,29 +22,22 @@
         </div>
         <!-- Navbar Links (Desktop) -->
         <div class="hidden sm:flex sm:items-left sm:justify-end sm:ml-6 w-full">
-          <a href="#"
-            class="text-gray-200 hover:bg-gray-100 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-          <a href="#"
-            class="text-gray-200 hover:bg-gray-100 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Resume</a>
-          <a href="#"
-            class="text-gray-200 hover:bg-gray-100 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-          <a href="#"
-            class="text-gray-200 hover:bg-gray-100 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+          <a v-for="(link, index) in navLinks" :key="index" :href="link.url"
+            class="text-gray-200 hover:bg-gray-100 hover:text-gray-700 px-3 py-2 rounded-md text-base font-medium mr-6">
+            {{ link.name }}
+          </a>
         </div>
       </div>
-    </div>
 
-    <!-- Mobile Menu -->
-    <div v-if="menuOpen" class="sm:hidden">
-      <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="#"
-          class="block text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium">Home</a>
-        <a href="#"
-          class="block text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium">Resume</a>
-        <a href="#"
-          class="block text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium">Projects</a>
-        <a href="#"
-          class="block text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium">Contact</a>
+      <!-- Mobile Menu -->
+      <div v-if="menuOpen" class="sm:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+
+          <a v-for="(link, index) in navLinks" :key="index" :href="link.url"
+            class="block text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium">
+            {{ link.name }}
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -55,6 +48,12 @@ export default {
   data() {
     return {
       menuOpen: false,
+      navLinks: [
+        { name: 'Home', url: '#' },
+        { name: 'Resume', url: '#' },
+        { name: 'Projects', url: '#' },
+        { name: 'Contact', url: '#' }
+      ]
     };
   },
   methods: {
@@ -64,7 +63,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* Optional custom styles */
-</style>
