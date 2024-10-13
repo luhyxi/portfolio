@@ -7,10 +7,19 @@
   src: url("../public/fonts/AfacadFlux-VariableFont_slnt,wght.ttf");
 }
 
+@font-face {
+  font-family: "Baskerville";
+  src: url("../public/fonts/LibreBaskerville-Regular.ttf");
+}
+
+@font-face {
+  font-family: "BaskerItal";
+  src: url("../public/fonts/LibreBaskerville-Italic.ttf");
+}
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    background:   #1F2D4A;
     --foreground: 222.2 84% 4.9%;
  
     --muted: 210 40% 96.1%;

@@ -1,5 +1,6 @@
 const animate = require("tailwindcss-animate")
 const plugin = require('tailwindcss/plugin')
+const icons = require('tailwind-fontawesome')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -95,12 +96,16 @@ module.exports = {
         "collapsible-up": "collapsible-up 0.2s ease-in-out",
       },
       fontFamily:{
-        Afacade: ["Afacade", "sans-serif"]
+        Afacade: ["Afacade", "sans-serif"],
+        Baskerville: ["Baskerville", "sans-serif"],
+        BaskerItal: ["BaskerItal", "sans-serif"],
+
       }
     },
   },
   plugins: [
     animate,
+    
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {
