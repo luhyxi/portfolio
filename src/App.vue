@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue'
 import Hero from './components/Hero.vue'
-
+import About from './components/About.vue';
 
 </script>
 
 <template>
-  <header class="bg-bluewood">
-  <Navbar />
+  <header class="bg-zinc-900">
+    <Navbar />
   </header>
-
-  <main class="flex items-center justify-center min-h-screen bg-bluewood">
-  <Hero />
+  
+  <main class="min-h-screen bg-zinc-900">
+    <Hero />
+    <About />
   </main>
 </template>
