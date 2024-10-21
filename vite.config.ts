@@ -7,6 +7,7 @@ import autoprefixer from 'autoprefixer'
 
 
 export default defineConfig({
+  base: "/portfolio/",
   css: {
     postcss: {
       plugins: [tailwind(), autoprefixer()],

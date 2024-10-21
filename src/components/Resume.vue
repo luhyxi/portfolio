@@ -17,9 +17,9 @@ import {
 </script>
 
 <template>
-    <main class="flex flex-row relative items-center justify-center min-h-screen bg-[#1F2D4A]">
+    <main class="flex flex-row items-center justify-center min-h-screen bg-[#1F2D4A] bg-contain bg-center p-80">
         <section
-            class="flex flex-col text-shadow shadow-gray-800 text-slate-200 animate-in fade-in duration-1000 tracking-wider lg:px-20">
+            class="flex flex-col text-shadow shadow-gray-800 text-slate-200 animate-in fade-in duration-1000 tracking-wider">
             <div class="flex items-center">
                 <h1 class="text-gray-200 font-bold text-2xl mr-4 pb-5">Resume</h1>
                 <div class="flex-grow border-t border-gray-600"></div>
@@ -105,7 +105,7 @@ import {
                 </div>
                 <div class="relative mt-6 ml-6 lg:ml-12 pr-6 flex-shrink-6 w-full h-[200%] overflow-hidden">
                     <!-- Adjust height as needed -->
-                    <img src="../assets/me.png" alt="ME's photo" class="object-cover filter drop-shadow-lg shadow-gray-200 w-[200%] h-[200%]"
+                    <img src="../assets/generic.jpg" alt="ME's photo" class="object-cover grayscale filter drop-shadow-lg shadow-gray-200 w-[200%] h-[200%]"
                         loading="lazy">
                 </div>
 

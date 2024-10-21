@@ -1,6 +1,6 @@
 <template>
     <main
-        class="flex flex-col items-center justify-around min-h-screen bg-[url(../public/img/stacked-peaks-haikei.svg)] bg-cover bg-center h-screen">
+        class="flex flex-col items-center justify-around min-h-screen bg-[url(../assets/img/stacked-peaks-haikei.svg)] bg-cover bg-center h-screen">
         <div
             class="flex flex-col text-shadow shadow-gray-800 justify-around items-start text-slate-200  animate-in fade-in duration-1000 tracking-wider p-80 pt-60">
             <h2 class="text-xl py-3 text-sky-300/70"> Hello, I am</h2>

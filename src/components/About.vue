@@ -1,7 +1,6 @@
 <template>
     <main
-        class="flex flex-row items-center justify-center min-h-screen bg-[url(../public/img/blob-haikei.svg)] bg-contain bg-center p-96">
-        
+        class="flex flex-row items-center justify-center min-h-screen bg-[url('../assets/img/blob-haikei.svg')] bg-contain bg-center p-4">
         <section
             class="flex flex-col text-shadow shadow-gray-800 text-slate-200 animate-in fade-in duration-1000 tracking-wider lg:px-20">
 
@@ -32,24 +31,25 @@
                 <br /><br />
 
                 Here are a few technologies I’ve been working with recently:
-                
+
                 <br /><br />
             </p>
 
             <ul class="grid grid-cols-2 gap-4 text-slate-300/70 list-disc ml-4">
-                <li v-for="tech in technologies" :key="tech" class="text-sm leading-relaxed text-sky-300/100 tracking-widest whitespace-nowrap">{{ tech }}</li>
+                <li v-for="tech in technologies" :key="tech"
+                    class="text-sm leading-relaxed text-sky-300/100 tracking-widest whitespace-nowrap">{{ tech }}</li>
             </ul>
         </section>
 
-        <div class="relative mt-6 ml-10"> <!-- Adjusted margin for spacing -->
+        <div class="relative mt-6 ml-10 size-70"> <!-- Adjusted margin for spacing -->
             <img src="../assets/person.jpg" alt="Luana's photo"
-                class="w-72 lg:w-72 transition-all transform grayscale-[40%] hover:grayscale-[20%] drop-shadow-md"
+                class="w-60  lg:w-60 transition-all transform grayscale-[40%] hover:grayscale-[20%] drop-shadow-md"
                 loading="lazy">
         </div>
     </main>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 
 const technologies = ref(["Dotnet", "C#", "Python", "Node.js", "Laravel", "TypeScript", "Vue", "SQL"]);

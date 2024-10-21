@@ -4,17 +4,17 @@
 
 @font-face {
   font-family: "Afacade";
-  src: url("../public/fonts/AfacadFlux-VariableFont_slnt,wght.ttf");
+  src: url("../assets/fonts/AfacadFlux-VariableFont_slnt,wght.ttf");
 }
 
 @font-face {
   font-family: "Baskerville";
-  src: url("../public/fonts/LibreBaskerville-Regular.ttf");
+  src: url("../assets/fonts/LibreBaskerville-Regular.ttf");
 }
 
 @font-face {
   font-family: "BaskerItal";
-  src: url("../public/fonts/LibreBaskerville-Italic.ttf");
+  src: url("../assets/fonts/LibreBaskerville-Italic.ttf");
 }
 
 @layer base {

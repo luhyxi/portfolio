@@ -44,23 +44,21 @@
   </nav>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      menuOpen: false,
-      activeLink: 'Contact', // Set 'Contact' as the active link
-      navLinks: [
-        { name: 'Resume', url: '#' },
-        { name: 'Projects', url: '#' },
-        { name: 'Contact', url: '#' }
-      ]
-    };
-  },
-  methods: {
-    toggleMenu() {
-      this.menuOpen = !this.menuOpen;
-    }
-  }
-};
+<script setup lang="ts">
+import { ref, reactive } from 'vue';
+
+// Reactive data for menu state and links
+const menuOpen = ref(false);
+const activeLink = ref('Contact');
+const navLinks = reactive([
+  { name: 'Resume', url: '#' },
+  { name: 'Projects', url: '#' },
+  { name: 'Contact', url: '#' }
+]);
+
+// Function to toggle the menu
+function toggleMenu() {
+  menuOpen.value = !menuOpen.value;
+}
 </script>
+
