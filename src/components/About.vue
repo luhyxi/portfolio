@@ -1,18 +1,19 @@
 <template>
     <main
-        class="flex flex-row items-center justify-center min-h-screen bg-[url('../assets/img/blob-haikei.svg')] bg-contain bg-center p-4">
+        class="flex flex-col md:flex-row items-center justify-center min-h-screen 
+            bg-[url('../assets/img/blob-haikei.svg')] bg-contain bg-center bg-no-repeat bg-[#1e2d4a]">
         <section
-            class="flex flex-col text-shadow shadow-gray-800 text-slate-200 animate-in fade-in duration-1000 tracking-wider lg:px-20">
-
+            class="flex flex-col text-shadow shadow-gray-800 text-slate-200 animate-in fade-in duration-1000 tracking-wider p-8 sm:p-16 md:p-72">
             <div class="flex items-center mb-4">
-                <h1 class="text-gray-200 font-bold text-2xl mr-4">About Me</h1>
+                <h1 class="text-gray-200 font-bold text-xl sm:text-2xl mr-4">About Me</h1>
                 <div class="flex-grow border-t border-gray-600"></div>
             </div>
 
-            <p class="text-sm leading-relaxed text-slate-300/70 tracking-widest">
+            <p class="text-xs sm:text-sm leading-relaxed text-slate-300/70 tracking-widest">
                 <br />
                 <span class="italic text-sky-300/100">Hello! I'm Luana</span> and I've been creating stuff ever since I
-                was a child, starting with simple RPG Maker games and Neopets webpages to small Python applications
+                was a
+                child, starting with simple RPG Maker games and Neopets webpages to small Python applications
                 while I was a teenager.
 
                 <br /><br />
@@ -35,22 +36,20 @@
                 <br /><br />
             </p>
 
-            <ul class="grid grid-cols-2 gap-4 text-slate-300/70 list-disc ml-4">
+            <ul class="grid grid-cols-2 sm:grid-cols-2 gap-4 text-slate-300/70 list-disc ml-4">
                 <li v-for="tech in technologies" :key="tech"
-                    class="text-sm leading-relaxed text-sky-300/100 tracking-widest whitespace-nowrap">{{ tech }}</li>
+                    class="text-xs sm:text-sm leading-relaxed text-sky-300/100 tracking-widest whitespace-nowrap">{{
+                    tech }}</li>
             </ul>
         </section>
-
-        <div class="relative mt-6 ml-10 size-70"> <!-- Adjusted margin for spacing -->
-            <img src="../assets/person.jpg" alt="Luana's photo"
-                class="w-60  lg:w-60 transition-all transform grayscale-[40%] hover:grayscale-[20%] drop-shadow-md"
-                loading="lazy">
-        </div>
     </main>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+
+
+const isMobileView = ref(window.innerWidth < 640);
 
 const technologies = ref(["Dotnet", "C#", "Python", "Node.js", "Laravel", "TypeScript", "Vue", "SQL"]);
 </script>
