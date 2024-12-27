@@ -1,19 +1,35 @@
 <script setup lang="ts">
 import { Button } from '@/components/ui/button';
+import {computed, reactive, ref} from 'vue';
+
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
 } from '@/components/ui/card';
 import {
-    Tabs,
-    TabsContent,
-    TabsList,
-    TabsTrigger,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
 } from '@/components/ui/tabs';
+
+// Reactive variable using ref
+const selectedImage = ref<string>('generic');
+
+// Function to change the reactive variable
+const updateMessage = (info:string) => {
+  selectedImage.value = info;
+};
+
+// TODO: See if it is possible to directly access the dir \public
+const imageSrc = computed(() => {
+  return new URL(`../../public/${selectedImage.value}.jpg`, import.meta.url).href;
+});
+
 </script>
 
 <template>
@@ -29,8 +45,8 @@ import {
                 <div class="flex-grow flex flex-col">
                     <Tabs default-value="ME" class="w-full sm:w-[600px] md:w-[800px]">
                         <TabsList class="grid w-full grid-cols-2 bg-gray-700">
-                            <TabsTrigger value="ME" class="py-2">ME</TabsTrigger>
-                            <TabsTrigger value="UFSM" class="py-2">UFSM</TabsTrigger>
+                            <TabsTrigger value="ME" class="py-2" @mousedown="updateMessage('generic')" >ME</TabsTrigger>
+                            <TabsTrigger value="UFSM" class="py-2" @mousedown="updateMessage('ufsm')">UFSM</TabsTrigger>
                         </TabsList>
 
                         <TabsContent value="ME">
@@ -101,9 +117,9 @@ import {
                     </Tabs>
                 </div>
                 <div class="relative mt-6 md:mt-0 md:ml-6 lg:ml-12 flex-shrink-0 w-full md:w-auto overflow-hidden">
-                    <img src="../assets/generic.jpg" alt="ME's photo"
-                        class="object-cover filter drop-shadow-lg shadow-xl rounded-lg w-full md:w-[400px] h-auto"
-                        loading="lazy">
+                  <img :src="imageSrc" :alt="selectedImage"
+                       class="object-cover filter drop-shadow-lg shadow-xl rounded-lg w-full md:w-[400px] h-auto"
+                       loading="lazy">
                 </div>
             </section>
         </section>
