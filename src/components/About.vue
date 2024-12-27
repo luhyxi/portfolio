@@ -49,7 +49,5 @@
 import { ref } from 'vue';
 
 
-const isMobileView = ref(window.innerWidth < 640);
-
 const technologies = ref(["Dotnet", "C#", "Python", "Node.js", "Laravel", "TypeScript", "Vue", "SQL"]);
 </script>
