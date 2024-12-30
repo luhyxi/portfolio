@@ -1,6 +1,8 @@
 <script setup lang="ts">
+// TODO: Check the weird size changes when messing with the images
+
 import { Button } from '@/components/ui/button';
-import {computed, reactive, ref} from 'vue';
+import {computed, ref} from 'vue';
 
 import {
   Card,

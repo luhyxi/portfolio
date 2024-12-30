@@ -1,10 +1,4 @@
-# TODO
-
-- Fix `@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap');` problem in App.vue logo
-- Put some text in `App.vue`
-
-
-# Ideas
+# Stuff for inspiration
 
 https://gregoire-becue.me/#scholar-timeline
 https://anuraghazra.dev/
