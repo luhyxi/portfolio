@@ -12,6 +12,7 @@ export default defineConfig({
     postcss: {
       plugins: [tailwind(), autoprefixer()],
     },
+  
   },
   plugins: [vue()],
   resolve: {
@@ -19,4 +20,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  publicDir: "true"
 })

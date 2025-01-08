@@ -27,9 +27,11 @@ const updateMessage = (info:string) => {
   selectedImage.value = info;
 };
 
+
 // TODO: See if it is possible to directly access the dir \public
 const imageSrc = computed(() => {
-  return new URL(`../../public/${selectedImage.value}.jpg`, import.meta.url).href;
+    console.log(`${import.meta.env.BASE_URL}${selectedImage.value}.jpg`)
+  return new URL(`/public/${selectedImage.value}.jpg`, import.meta.url).href;
 });
 
 </script>
