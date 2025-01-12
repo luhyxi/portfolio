@@ -41,7 +41,7 @@
         <button
           v-for="(link, index) in navLinks"
           :key="index"
-          @click="$emit('open-popup')"
+          @click="$emit('open-popup', navLinks[index].content)"
           class="px-3 py-2 mr-6 rounded-md text-base font-medium text-gray-200 hover:bg-gray-100 hover:text-gray-700"
         >
           {{ link.name }}
@@ -75,9 +75,9 @@ import { ref, reactive, onMounted, onUnmounted } from 'vue';
 const menuOpen = ref(false);
 const activeLink = ref('Contact');
 const navLinks = reactive([
-  { name: 'Resume', content: '1' },
-  { name: 'Projects', content: '2' },
-  { name: 'Contact', content: '3' },
+  { name: 'Resume', content: '0' },
+  { name: 'Projects', content: '1' },
+  { name: 'Contact', content: '2' },
 ]);
 
 // State for tracking popup visibility and content

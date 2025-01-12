@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import {ref, onMounted, onUnmounted, shallowRef} from 'vue';
 import Navbar from './components/Navbar.vue';
 import Hero from './components/Hero.vue';
 import About from './components/About.vue';
 import Resume from './components/Resume.vue';
-
+import NavResume from './components/navcontent/NavResume.vue'
+import NavProjects from './components/navcontent/NavProjects.vue'
+import NavContact from  './components/navcontent/NavContact.vue'
+const popupContent = shallowRef(NavResume);
 const isNavbarVisible = ref(true);
 let lastScrollPosition = 0;
-const popupVisible = ref(false);
 
 const handleScroll = () => {
   const currentScrollPosition = window.scrollY;
@@ -25,17 +27,28 @@ const handleScroll = () => {
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
 });
-
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
 });
 
-// Function to open the popup
-const openPopup = () => {
+const popupVisible = ref(false);
+const RenderNavbarContent = (content: string) => {
+  switch (content) {
+    case '0':
+      popupContent.value = NavResume;
+      break;
+    case '1':
+      popupContent.value = NavProjects;
+      break;
+    case '2':
+      popupContent.value = NavContact;
+      break;
+  }
+}
+const openPopup = (content: string) => {
+  RenderNavbarContent(content);
   popupVisible.value = true;
 };
-
-// Function to close the popup
 const closePopup = () => {
   popupVisible.value = false;
 };
@@ -62,7 +75,7 @@ const closePopup = () => {
     <div v-if="popupVisible" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div class="bg-white rounded-lg p-6 w-1/3">
         <h2 class="text-lg font-bold mb-4">Popup Title</h2>
-        <p>This popup affects both the header and the main content.</p>
+        <component :is="popupContent" />
 
         <!-- Close button -->
         <button @click="closePopup" class="mt-4 bg-red-500 text-white px-4 py-2 rounded">
