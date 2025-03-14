@@ -1,15 +1,15 @@
 <template>
     <main
         class="flex flex-col md:flex-row items-center justify-center min-h-screen 
-            bg-[url('../assets/img/blob-haikei.svg')] bg-contain bg-center bg-no-repeat bg-[#1e2d4a]">
+            bg-[url('../assets/img/blob-haikei.svg')] bg-contain bg-center bg-no-repeat bg-[#1e2d4a] p-10 sm:p-0">
         <section
-            class="flex flex-col text-shadow shadow-gray-800 text-slate-200 animate-in fade-in duration-1000 tracking-wider p-8 sm:p-16 md:p-72">
+            class="flex flex-col text-shadow shadow-gray-800 text-slate-200 animate-in fade-in duration-1000 tracking-wider">
             <div class="flex items-center mb-4">
-                <h1 class="text-gray-200 font-bold text-xl sm:text-2xl mr-4">About Me</h1>
+                <h1 data-aos="fade-up" class="text-gray-200 font-bold text-xl sm:text-2xl mr-4">About Me</h1>
                 <div class="flex-grow border-t border-gray-600"></div>
             </div>
 
-            <p class="text-xs sm:text-sm leading-relaxed text-slate-300/70 tracking-widest">
+            <p data-aos="fade-up" data-aos-delay="300" class="text-xs sm:text-sm leading-relaxed text-slate-300/70 tracking-widest">
                 <br />
                 <span class="italic text-sky-300/100">Hello! I'm Luana</span> and I've been creating stuff ever since I
                 was a
@@ -36,7 +36,7 @@
                 <br /><br />
             </p>
 
-            <ul class="grid grid-cols-2 sm:grid-cols-2 gap-4 text-slate-300/70 list-disc ml-4">
+            <ul data-aos="fade-up" class="grid grid-cols-2 sm:grid-cols-2 gap-4 text-slate-300/70 list-disc ml-4 ">
                 <li v-for="tech in technologies" :key="tech"
                     class="text-xs sm:text-sm leading-relaxed text-sky-300/100 tracking-widest whitespace-nowrap">{{
                     tech }}</li>

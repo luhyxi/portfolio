@@ -37,15 +37,15 @@ const imageSrc = computed(() => {
 </script>
 
 <template>
-    <main class="flex flex-col items-center justify-center min-h-screen bg-[#1F2D4A] bg-contain bg-center">
+    <main class="flex flex-col items-center justify-center min-h-screen bg-[#1F2D4A] bg-contain bg-center p-10 sm:p-0">
         <section
-            class="flex flex-col text-shadow shadow-gray-800 text-slate-200 animate-in fade-in duration-1000 tracking-wider px-8 sm:px-16 md:px-40 py-16">
+            class="flex flex-col text-shadow shadow-gray-800 text-slate-200 animate-in fade-in duration-1000 tracking-wider ">
             <div class="flex items-center mb-4">
-                <h1 class="text-gray-200 font-bold text-xl sm:text-2xl mr-4">Resume</h1>
+                <h1 data-aos-delay="300" class="text-gray-200 font-bold text-xl sm:text-2xl mr-4">Resume</h1>
                 <div class="flex-grow border-t border-gray-600"></div>
             </div>
 
-            <section class="flex flex-col md:flex-row items-start">
+            <section data-aos="fade-up" class="flex flex-col md:flex-row items-start">
                 <div class="flex-grow flex flex-col">
                     <Tabs default-value="ME" class="w-full sm:w-[600px] md:w-[800px]">
                         <TabsList class="grid w-full grid-cols-2 bg-gray-700">
@@ -71,12 +71,8 @@ const imageSrc = computed(() => {
                                             processing time for optimized queries.
                                         </li>
                                         <li class="text-sm sm:text-base leading-relaxed text-sky-300 tracking-widest">
-                                            Worked in a team that developed a billing system using microservices, AWS,
-                                            and modern technologies.
-                                        </li>
-                                        <li class="text-sm sm:text-base leading-relaxed text-sky-300 tracking-widest">
-                                            Helped resolve Docker and virtualization issues among other interns and
-                                            developers.
+                                            Member of a performance and optimization team, modernizing a legate codebase to state-of-the-art Cloud
+                                            based technologies.
                                         </li>
                                     </ul>
                                 </CardContent>
