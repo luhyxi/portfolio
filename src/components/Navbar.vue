@@ -65,7 +65,7 @@ const navLinks = reactive([
   { 
     name: 'Projects', 
     content: "https://github.com/luhyxi", 
-    download: null 
+    download: undefined 
   },
 ]);
 
